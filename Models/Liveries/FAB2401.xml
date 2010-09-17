@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+			<livery>
+				<name type="string">FAB2401</name>
+				<texture>FAB2401.png</texture>
+			</livery>
+			<cabine>
+				<name type="string">Default</name>
+				<texture>misc.png</texture>
+			</cabine>        
+        
+    </model>
+</sim>
+</PropertyList>

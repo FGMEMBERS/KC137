@@ -1,0 +1,569 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <sim>
+
+		<description>KC-137 FAB</description>
+		<author>Innis Cunningham, Isaias Prestes</author>
+		<author>Prestes Hangar</author>
+		<status>alpha</status>
+
+		<flight-model>jsb</flight-model>
+		<aero>KC137</aero>
+
+		<virtual-cockpit archive="y">false</virtual-cockpit>
+
+		<systems>
+			<!-- O piloto automtico do 707 -->
+			<autopilot>
+				<path>Aircraft/KC137/Systems/707-autopilotV0.xml</path>
+			</autopilot>
+			<electrical>
+				<path>Aircraft/KC137/Systems/electrical.xml</path>
+			</electrical>
+			<system>
+				<path>Aircraft/Generic/generic-systems.xml</path>
+			</system>
+		</systems>
+		
+		<!-- Definies para som do avio -->
+		<sound>
+			<audible>true</audible>
+			<path>Aircraft/KC137/Sounds/707-sound.xml</path>
+		</sound>
+
+		<!-- Definies para splash screen -->
+		<startup>
+			<splash-texture>Aircraft/KC137/splash.png</splash-texture>
+		</startup>
+
+		<!-- Definição do Painel da Aeronave -->
+		<panel>
+			<path>Aircraft/KC137/Panels/737-ifr-panel.xml</path>
+			<visibility>true</visibility>
+		</panel>
+		
+		<!-- Definição do Painel da Aeronave -->
+		<instrumentation>
+			<path>Aircraft/KC137/Systems/instrumentation.xml</path>
+		</instrumentation>
+		
+		
+		<!-- modificações para funcionamento dos liveries - http://wiki.flightgear.org/index.php/Livery_over_MP -->
+		<model>
+			<path>Aircraft/KC137/Models/KC137.xml</path>
+			<livery>
+				<name type="string">Default</name>
+				<texture>707.png</texture>
+			</livery>
+			<cabine>
+				<name type="string">Default</name>
+				<texture>misc.png</texture>
+			</cabine>			
+			<wingsp>
+				<name type="string">Default</name>
+				<texture>wings.png</texture>
+			</wingsp>
+		</model>
+		
+		<view>
+			<internal archive="y">true</internal>
+			<config>
+				<!-- x/y/z == right/up/back -->
+				<x-offset-m archive="y">-0.36</x-offset-m>
+				<y-offset-m archive="y">-0.67</y-offset-m>
+				<z-offset-m archive="y">-18.36</z-offset-m>
+				<pitch-offset-deg archive="y">-8.0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="1">
+			<config>
+				<!-- big plane, so extend chase view offset a bit -->
+				<z-offset-m type="double" archive="y">-50.0</z-offset-m>
+			</config>
+		</view>
+
+		<chase-distance-m>-75</chase-distance-m>
+
+		<view n="101">
+		    <name>Left Wing</name>
+		    <type>lookfrom</type>
+		    <internal archive="y">true</internal>
+		    <config>
+		      <from-model type="bool">true</from-model>
+		      <from-model-idx type="int">0</from-model-idx>
+		      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+		      <default-field-of-view-deg type="double">55</default-field-of-view-deg>
+		      <pitch-offset-deg>-8.0</pitch-offset-deg>
+		      <heading-offset-deg type="double">90</heading-offset-deg> <!-- parallel to the panel -->
+		      <x-offset-m archive="y"> -2.0 </x-offset-m> <!--Left/Right -->
+		      <y-offset-m archive="y"> 0.30 </y-offset-m> <!--Up/Down -->
+		      <z-offset-m archive="y"> 4.00 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<view n="102">
+		    <name>Right Turbofan</name>
+		    <type>lookfrom</type>
+		    <internal archive="y">true</internal>
+		    <config>
+			      <from-model type="bool">true</from-model>
+			      <from-model-idx type="int">0</from-model-idx>
+			      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+			      <default-field-of-view-deg type="double">45</default-field-of-view-deg>
+			      <pitch-offset-deg>-8.0</pitch-offset-deg>
+			      <heading-offset-deg type="double">225</heading-offset-deg> <!-- parallel to the panel -->
+			      <x-offset-m archive="y"> 2.0 </x-offset-m> <!--Left/Right -->
+			      <y-offset-m archive="y"> 0.30 </y-offset-m> <!--Up/Down -->
+			      <z-offset-m archive="y"> -10.00 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<view n="103">
+			<name>Interior View</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">155.0</default-field-of-view-deg>
+				<x-offset-m archive="y">0</x-offset-m>
+				<!-- right/left -->
+				<y-offset-m archive="y">-0.8</y-offset-m>
+				<!-- up/down -->
+				<z-offset-m archive="y"
+										type="double">13.5</z-offset-m>
+				<!-- aft/fore -->
+				<pitch-offset-deg>-24.4</pitch-offset-deg>
+				<heading-offset-deg>180</heading-offset-deg>
+			</config>
+		</view>
+
+		<view n="104">
+			<name>Abastecedor Esquerda</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+				<x-offset-m archive="y">6.96982</x-offset-m>
+				<!-- right/left -->
+				<y-offset-m archive="y">20.3766</y-offset-m>
+				<!-- up/down -->
+				<z-offset-m archive="y"
+										type="double">2.0</z-offset-m>
+				<!-- aft/fore -->
+				<pitch-offset-deg>-24.4</pitch-offset-deg>
+				<heading-offset-deg>180</heading-offset-deg>
+			</config>
+		</view>	
+		<view n="105">
+			<name>Abastecedor Direita</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+				<x-offset-m archive="y">6.96982</x-offset-m>
+				<!-- right/left -->
+				<y-offset-m archive="y">-20.3766</y-offset-m>
+				<!-- up/down -->
+				<z-offset-m archive="y"
+										type="double">2.0</z-offset-m>
+				<!-- aft/fore -->
+				<pitch-offset-deg>-24.4</pitch-offset-deg>
+				<heading-offset-deg>180</heading-offset-deg>
+			</config>
+		</view>			
+		
+		
+					
+		<!-- Ajuste dos flaps -->
+				<flaps>
+					<setting>0.000</setting>
+					<setting>0.125</setting>
+					<setting>0.250</setting>
+					<setting>0.375</setting>
+					<setting>0.500</setting>
+					<setting>0.625</setting>
+					<setting>0.750</setting>
+					<setting>0.875</setting>
+					<setting>1.000</setting>
+				</flaps>
+
+<!-- O menu de ajuda dessa aeronave -->
+		<help>
+			<title>Boeing KC-137</title>
+			<line>Choose your favorit texture using the key above</line>
+			<line>To start the plane you have to select "Engine Starter" and then when</line>
+			<line>n2 shows 25 you have to select "Engine Start", If you want to cutoff</line>
+			<line>the engine just select "Engine Start"</line>
+			<key>
+				<name>l</name>
+				<desc>Brings up the Livery Switching Dialog</desc>
+			</key>
+			<key>
+				<name>Del</name>
+				<desc>Toggle Reversers</desc>
+			</key>
+			<key>
+				<name>Ctrl+B</name>
+				<desc>Toggle SpeedBrake</desc>
+			</key>
+		</help>
+				
+<!-- Entradas para o menu de apoio para controle da aeronave -->
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Boeing KC-137</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.open()</script>
+						</binding>
+					</item>
+
+					<item>
+						<label>Landing Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/landing-light</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Wing-Logo Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/logo-lights</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Navigation Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/nav-lights</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Strobe Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/strobe</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Beacon Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/beacon</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Taxi Light On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/taxi-lights</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Left Engine 01 Starter</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine/starter</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Left Engine 01 Start</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine/cutoff</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Left Engine 02 Starter</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine[1]/starter</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Left Engine 02 Start</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine[1]/cutoff</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Right Engine 03 Starter</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine[2]/starter</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Right Engine 03 Start</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine[2]/cutoff</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Right Engine 04 Starter</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine[3]/starter</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<item>
+						<label>Right Engine 04 Start</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/engines/engine[3]/cutoff</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+					<!--Ground proximity warning system (GPWS)-->
+					<item>
+						<label>Ground proximity warning system (GPWS)</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>instrumentation/mk-viii/servicable</property>
+						</binding>
+					</item>
+					
+					<!-- P&W Turbofan Smoke -->
+					<item>
+						<label>Turbofans Smoke (ON/OFF)</label>
+					    <binding>
+							<command>property-toggle</command>
+					      	<property>sim/multiplay/generic/int[6]</property>
+					    </binding>
+					    <binding>
+					      	<command>property-assign</command>
+					      	<property>sim/multiplay/generic/int[7]</property>
+					      	<value>0</value> 
+					    </binding>
+					</item>					
+					<!-- 
+					<item>
+
+						<label>Combustible</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							   var dlg = gui.Dialog.new("/sim/gui/dialogs/foo-config/dialog","Aircraft/707/Dialogs/fuel734.xml");
+									    #dlg.open();
+									    #dlg.close();
+					</script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>fuel734</dialog-name>
+						</binding>
+					</item>		
+					 -->
+				</menu>
+			</default>
+		</menubar>
+
+		<!-- turns off GA tower communications -->
+		<ATC>
+			<enabled type="bool">false</enabled>
+		</ATC>		
+						
+ </sim>
+
+	<!-- Engines using thrust reversal keyboard. http://wiki.flightgear.org/index.php/Howto:_Add_thrust_reversal -->
+	<!-- Prestes Hangar code - SET-2009 -->
+	<input>
+		<keyboard>
+			<key n="127">
+				<name>Delete</name>
+				<desc>Toggle Reversers</desc>
+				<binding>
+					<command>nasal</command>
+					<script>reversethrust.togglereverser()</script>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
+
+
+	
+	
+		<!-- Engines using thrust reversal. http://wiki.flightgear.org/index.php/Howto:_Add_thrust_reversal -->
+		<!-- Prestes Hangar code - SET-2009 -->
+		<engines>
+			<engine n="0">
+				<running>true</running>
+				<reverser-position type="double">0.000000</reverser-position>
+			</engine>
+			<engine n="1">
+				<running>true</running>
+				<reverser-position type="double">0.000000</reverser-position>
+			</engine>
+			<engine n="2">
+				<running>true</running>
+				<reverser-position type="double">0.000000</reverser-position>
+			</engine>
+			<engine n="3">
+				<running>true</running>
+				<reverser-position type="double">0.000000</reverser-position>
+			</engine>
+		</engines>
+
+	<radios>
+		<dme>
+			<switch-position>1</switch-position>
+		</dme>
+	</radios>
+			
+<!-- Instrumentação -->
+
+	<instrumentation>
+		<mk-viii>
+			<serviceable>true</serviceable>
+			<configuration-module>
+				<category-1>1</category-1>
+				<!-- GA Fast, 150' Mode 4B -->
+			</configuration-module>
+			<inputs>
+				<arinc429>
+					<decision-height-ncd>false</decision-height-ncd>
+					<decision-height>200</decision-height>
+				</arinc429>
+			</inputs>
+		</mk-viii>
+		<radar>
+			<switch type="string"
+							archive="y">ON</switch>
+			<mode-control type="int"
+										archive="y">1</mode-control>
+			<display-controls>
+				<WX type="bool"
+						archive="y">false</WX>
+				<pos type="bool"
+						 archive="y">true</pos>
+				<data type="bool"
+							archive="y">false</data>
+				<symbol type="bool"
+						 archive="y">false</symbol>
+			</display-controls>
+			<serviceable type="bool">true</serviceable>
+			<range type="int"
+						 archive="y">40</range>
+			<mode type="string"
+						archive="y">WX</mode>
+			<lightning type="bool"
+								 archive="y">false</lightning>
+			<display-mode type="string"
+										archive="y">plan</display-mode>
+			<minimized type="bool"
+								 archive="y">false</minimized>
+		</radar>
+		
+	</instrumentation>
+	
+	<autopilot>
+		<config>
+			<min-climb-speed-kt type="float">150.0</min-climb-speed-kt>
+			<best-climb-speed-kt type="float">300.0</best-climb-speed-kt>
+			<target-climb-rate-fpm type="float">2000.0</target-climb-rate-fpm>
+			<target-descent-rate-fpm type="float">1500.0</target-descent-rate-fpm>
+			<elevator-adj-factor type="float">3500</elevator-adj-factor>
+			<integral-contribution type="float">0.001</integral-contribution>
+			<zero-pitch-throttle type="float">0.0001</zero-pitch-throttle>
+			<zero-pitch-trim-full-throttle type="float">0.0001</zero-pitch-trim-full-throttle>
+			<max-roll-deg type="float">30</max-roll-deg>
+			<max-aileron type="float">1.0</max-aileron>
+		</config>
+	</autopilot>
+	
+	<systems>
+		<refuel>
+			<type>boom</type>
+		</refuel>
+	</systems>
+
+	<controls>
+		<autoflight>
+			<display-mach type="bool">false</display-mach>
+		</autoflight>
+	</controls>
+	
+	  
+	<!-- Códigos NASAL -->
+	<nasal>
+		<reversethrust>
+			<file>Aircraft/KC137/Nasal/reverse-thrust.nas</file>
+		</reversethrust>
+		<aar>
+			<file>Aircraft/KC137/Nasal/aar.nas</file>
+		</aar>
+		<radar>
+			<file>Aircraft/KC137/Nasal/radar.nas</file>
+		</radar>	
+	    <livery>
+	        <file>Aircraft/KC137/Nasal/livery.nas</file>
+	    </livery>
+			
+	</nasal>  
+   
+</PropertyList>

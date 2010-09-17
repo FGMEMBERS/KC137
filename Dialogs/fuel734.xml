@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>fuel734</name>
+ <!-- fuel734 -->
+ <width>400</width>
+ <!-- 620 y 430 -->
+ <height>250</height>
+ <modal>false</modal>
+
+ <text>
+  <x>200</x>
+  <y>200</y>
+  <label>Fuel Tanks</label>
+ </text>
+
+ <group>
+  <x>10</x>
+  <y>40</y>
+
+  <text>
+   <x>30</x>
+   <y>160</y>
+   <label>Fuel Load</label>
+  </text>
+
+  <input>
+   <name>lw1</name>
+   <x>0</x>
+   <y>140</y>
+   <width>100</width>
+   <height>25</height>
+   <!-- Data source : Boeing 707 and Awacs: In Detail and Scale | Publisher:    Aero Publishers (CA) | ISBN-10 / ASIN:    0830685332 | ISBN-13 / EAN:   9780830685332 -->
+   <label>Left Wing 1 (2342 gallons max.)</label>
+   <property>/consumables/fuel/tank/level-gal_us</property>
+   <binding>
+    <command>dialog-apply</command>
+    <object-name>lw1</object-name>
+   </binding>
+   <binding>
+    <command>dialog-update</command>
+   </binding>
+  </input>
+
+  <input>
+   <name>lw2</name>
+   <x>0</x>
+   <y>110</y>
+   <width>100</width>
+   <height>25</height>
+   <!-- Data source : Boeing 707 and Awacs: In Detail and Scale | Publisher:    Aero Publishers (CA) | ISBN-10 / ASIN:    0830685332 | ISBN-13 / EAN:   9780830685332 -->
+   <label>Left Wing 2 (2269 gallons max.)</label>
+   <property>/consumables/fuel/tank[1]/level-gal_us</property>
+   <binding>
+    <command>dialog-apply</command>
+    <object-name>lw2</object-name>
+   </binding>
+   <binding>
+    <command>dialog-update</command>
+   </binding>
+  </input>
+
+  <input>
+   <name>rw1</name>
+   <x>0</x>
+   <y>80</y>
+   <width>100</width>
+   <height>25</height>
+   <!-- Data source : Boeing 707 and Awacs: In Detail and Scale | Publisher:    Aero Publishers (CA) | ISBN-10 / ASIN:    0830685332 | ISBN-13 / EAN:   9780830685332 -->
+   <label>Right Wing 3 (2269 gallons max.)</label>
+   <property>/consumables/fuel/tank[2]/level-gal_us</property>
+   <binding>
+    <command>dialog-apply</command>
+    <object-name>rw1</object-name>
+   </binding>
+   <binding>
+    <command>dialog-update</command>
+   </binding>
+  </input>
+
+  <input>
+   <name>rw2</name>
+   <x>0</x>
+   <y>50</y>
+   <width>100</width>
+   <height>25</height>
+   <!-- Data source : Boeing 707 and Awacs: In Detail and Scale | Publisher:    Aero Publishers (CA) | ISBN-10 / ASIN:    0830685332 | ISBN-13 / EAN:   9780830685332 -->
+   <label>Right Wing 4 (2342 gallons max.)</label>
+   <property>/consumables/fuel/tank[3]/level-gal_us</property>
+   <binding>
+    <command>dialog-apply</command>
+    <object-name>rw2</object-name>
+   </binding>
+   <binding>
+    <command>dialog-update</command>
+   </binding>
+  </input>
+
+  <input>
+   <name>ct</name>
+   <x>0</x>
+   <y>20</y>
+   <width>100</width>
+   <height>25</height>
+   <!-- Data source : Boeing 707 and Awacs: In Detail and Scale | Publisher:    Aero Publishers (CA) | ISBN-10 / ASIN:    0830685332 | ISBN-13 / EAN:   9780830685332 -->
+   <label>Center Tank (5967 gallons max.)</label>
+   <property>/consumables/fuel/tank[4]/level-gal_us</property>
+   <binding>
+    <command>dialog-apply</command>
+    <object-name>ct</object-name>
+   </binding>
+   <binding>
+    <command>dialog-update</command>
+   </binding>
+  </input>
+
+ </group>
+
+ <button>
+  <x>170</x>
+  <y>10</y>
+  <legend>Close</legend>
+  <default>true</default>
+  <key>Esc</key>
+  <binding>
+   <command>dialog-close</command>
+  </binding>
+ </button>
+
+</PropertyList>

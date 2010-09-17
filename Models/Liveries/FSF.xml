@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+			<livery>
+				<name type="string">FSF GPL3</name>
+				<texture>FSF.png</texture>
+			</livery>
+			<cabine>
+				<name type="string">FSF GPL3</name>
+				<texture>misc.png</texture>
+			</cabine>        
+    </model>
+</sim>
+</PropertyList>
